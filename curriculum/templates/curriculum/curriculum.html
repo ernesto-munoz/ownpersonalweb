@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ernesto Muñoz Faba Personal Web</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'curriculum/superhero/bootstrap.css' %}">
+    <script src="{% static 'curriculum/script/curriculum.js' %}"></script>
+     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    </style>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container-fluid">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Ernesto Muñoz Faba</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#ownwork">Own Work</a></li>
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=100011064877741" target="_blank">
+                     <img class="img-responsive" alt="follow me on facebook" src="{% static 'curriculum/img/facebook_icon.png' %}" border=0 width="20px" height="20px">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/ernesto-mu%C3%B1oz-faba-0b034a10b/" target="_blank">
+                    <img class="img-responsive" alt="follow me on linkedin" src="{% static 'curriculum/img/linkedin_icon.png' %}" border=0 width="20px" height="20px">
+                </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="about" class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="container col-sm-5">
+                <img class="pull-left" src="{% static 'curriculum/img/foto02.png' %}" class="img-responsive img-rounded" style="width:90%" alt="Profile image not available">
+            </div>
+            <div class="container text-center col-sm-7">
+                <h1>Ernesto Muñoz Faba</h1>
+                <h3>Software Developer</h3>
+                <h3>Phone: (+34) 625 09 83 51</h3>
+                <h3>Email: emunozfaba@gmail.com</h3>
+                <h3>Date of Birth: May 18th, 1989</h3>
+                <p class="text-justify">Hello! I'm Ernesto, I have a Degree in Computer Science and a Master Degree in Computer Graphics and Artificial Intelligence.
+                    I have worked before as a software developer in places like research laboratory and animation VFX studios (as a tools developer)<br><br>
+                    I really love the computer graphics world and i want to work in a place devoted to that.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Experience-->
+<div id="experience" class="container-fluid bg-4 text-center" >
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Experience</h2>
+        </div>
+        <div class="row panel-body">
+            <div class="col-sm-5">
+                <h4>Junior Tools and Pipeline Developer (Software Engineer)</h4>
+                <p>Oct. 2017-Jan. 2017</p>
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-asterisk"></span>
+            </div>
+            <div class="col-sm-4">
+                <h4>Blue Dream Studios Spain</h4>
+                <p>In the year and four months that i worked in <strong>Blue Dream Studios Spain</strong> i made several kind of works to help the development department.
+                Between my tasks i organized the interdepartamental issues platform, code and tools wiki, lots of scripts for <strong>Maya</strong>, <strong>Nuke</strong> and <strong>Houdini</strong> and lots of scripts to retrieve and send information to <strong>Shotgun</strong> (the production management platform) with <strong>Python</strong>.</p>
+            </div>
+        </div>
+        <div class="row panel-body">
+            <div class="col-sm-5">
+                <h4>XNA Programmer</h4>
+                <p>Sept. 2013-Sept. 2014</p>
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-asterisk"></span>
+            </div>
+            <div class="col-sm-4">
+                <h4>Universidad Politécnica de Valencia</h4>
+                <p>As an Intership in the Universidad Politécnica de Valencia i helped to develop several rehabilitation games in the IA2 institute. Mainly with <strong>C#</strong> and the <strong>XNA Framework.</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Education-->
+<div id="education" class="container-fluid bg-4 text-center" >
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Education</h2>
+        </div>
+        <div class="row panel-body">
+            <div class="col-sm-5">
+                <h4>Master's Degree</h4>
+                <p>2014-2015</p>
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-asterisk"></span>
+            </div>
+            <div class="col-sm-4">
+                <h4>MASTER'S DEGREE<br>ARTIFICIAL INTELLIGENCE, SHAPE RECOGNITION AND DIGITAL IMAGE</h4>
+                <p>I obtained my Master's Degree in the <em>Universidad Politécnica de Valencia in the Artificial Intelligence, Shape Recognition and Digital Image</em>. My Master Thesis was about the development of Virtual Reality with the Oculus DK2 to help to liberate stress for hospitalized children.</p>
+            </div>
+        </div>
+        <div class="row panel-body">
+            <div class="col-sm-5">
+                <h4>Bachelor's Degree</h4>
+                <p>2008-2014</p>
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-asterisk"></span>
+            </div>
+            <div class="col-sm-4">
+                <h4>COMPUTER SCIENCE</h4>
+                <p>I graduated in the <em>Universidad Politécnica de Valencia in Computer Science</em> in 2014. After working as internship in my last year I presented a Final Project about the development of games for the rehabilitation of patients with injuries in the limbs.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Skills-->
+<div id="skills" class="container-fluid bg-4 text-center" >
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Skills</h2>
+        </div>
+        <div class="row panel-body">
+            <div class="col-sm-5">
+                <h5>Programming Languages:</h5>
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-asterisk"></span>
+            </div>
+            <div class="col-sm-4">
+                <p>C/C++/C#, Python, Perl, Java, HTML, CSS, GLSL, OSL, HLSL</p>
+            </div>
+        </div>
+        <div class="row panel-body">
+            <div class="col-sm-5">
+                <h5>Frameworks:</h5>
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-asterisk"></span>
+            </div>
+            <div class="col-sm-4">
+                <p>Maya API, Nuke API, Houdini API, Shotgun (Software API), Unity, Django, OpenGL, OpenCV, Scikit-Learn, SQLAlchemist, Jinja</p>
+            </div>
+        </div>
+        <div class="row panel-body">
+            <div class="col-sm-5">
+                <h5>Other:</h5>
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-asterisk"></span>
+            </div>
+            <div class="col-sm-4">
+                <p>Windows, Linux, Open Office, Git, SVN</p>
+            </div>
+        </div>
+        <div class="row panel-body">
+            <div class="col-sm-5">
+                <h5>Languages:</h5>
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-asterisk"></span>
+            </div>
+            <div class="col-sm-4">
+                <p>
+                    Spanish (Mother Language)<br>
+                    English (Advanced)<br>
+                    Japanese (JLPT N3 Certificate)
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Own Work-->
+<div id="ownwork" class="container-fluid bg-4 text-center" >
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Own Work</h2>
+        </div>
+
+        <div class="panel-body container">
+            <div id="own-work-carousel" class="carousel slide" data-ride="carousel">
+                <!--Indicators-->
+                <ol class="carousel-indicators">
+                    <li data-target="#own-work-carousel" data-slide-to="0"></li>
+                    <li data-target="#own-work-carousel" data-slide-to="1" class="active"></li>
+                    <li data-target="#own-work-carousel" data-slide-to="2"></li>
+                </ol>
+
+                <!--Wrapper for slides-->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item">
+                        <img src="{% static 'curriculum/img/project01_01.png' %}" alt="Jardin Infantil. Realidad Virtual con Oculus Rift para niños hospitalizados.">
+                        <div class="carousel-caption">
+                            <h3>Jardin Infantil. Realidad Virtual con Oculus Rift para niños hospitalizados.</h3>
+                            <p>Master Thesis. Virtual Reality Project made with Unity and the Oculus Rift headset to help the stress of hospitalized children. Also include a detailed history and current state of the virtual reality for clinic purpose.</p>
+                            <p><a href="https://drive.google.com/file/d/0BzLgnZgb69JQTUJhNEFiSjc2NjQ/view?usp=sharing">Trabajo Fin de Master - Presentation</a></p>
+                            <p><a href="https://drive.google.com/file/d/0BzLgnZgb69JQeXJ6U09adVVXdVE/view?usp=sharing">Trabajo Fin de Master - Document</a></p>
+                        </div>
+                    </div>
+                    <div class="item active">
+                        <img src="{% static 'curriculum/img/project02_01.png' %}" alt="Catmull-Clark subdivision surface">
+                        <div class="carousel-caption">
+                            <h3>Catmull-Clark subdivision surface</h3>
+                            <p>This project is my own implementation of the Catmull Clark algorithm for the subdivision of meshes.</p>
+                            <p>The algorithm is implemented as a plugin for Maya in C++. The plugin adds a mel command that interferes
+                                in the construction history of a mesh to make the desired subdivisions.</p>
+                            <a href="https://github.com/ernesto-munoz/CatmullClarkImplementation">GitHub link to the code</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'curriculum/img/project03_01.png' %}" alt="Radio Tracker">
+                        <div class="carousel-caption">
+                            <h3 style="color: #4d4d4d">Radio Tracker with Django</h3>
+                            <p style="color: #4d4d4d">Utility web page for a torrent radio tracker with the capability to hear each program and track with has been already listened.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Left and right controls-->
+                <a class="left carousel-control" href="#own-work-carousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#own-work-carousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

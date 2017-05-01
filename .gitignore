@@ -87,3 +87,10 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Own
+.idea
+*.sqlite3
+*.mp3
+*.torrent
+todo

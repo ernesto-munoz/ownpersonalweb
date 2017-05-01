@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>H!P Radio Tracker (Kumai)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'hpradiotracker/cerulean/bootstrap.css' %}">
+    <script src="{% static 'hpradiotracker/script/hpradiotracker.js' %}"></script>
+</head>
+<body>
+    <div id="container" class="container-fluid">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Aidoru Online - Hello Project Radio Tracker</a>
+            </div>
+        </nav>
+        <div>
+            <p id="welcome-paragraph" class="h4">
+                {% if not user.is_authenticated %}
+                    Welcome! You are not logged. Please, be free to sign up.
+                {% else %}
+                    Welcome back, {{ user.get_username }}!
+                {% endif %}
+            </p>
+            <p id="error-paragraph" class="h4">
+            </p>
+            <p id="message-paragraph" class="h4">
+            </p>
+        </div>
+
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col col-sm-1">
+                    <button id="play-button" type="button" class="btn btn-primary center-block" {% if not user.is_authenticated %} disabled {% endif %}>Play audio</button>
+                </div>
+
+                <div class="col col-sm-4">
+                    <div class="input-group pull-left">
+                    <span class="input-group-btn">
+                        <button id="search-button" type="button" class="btn btn-primary" {% if not user.is_authenticated %} disabled {% endif %}>Search</button>
+                    </span>
+                        <input id="query-string" type="text" class="form-control" placeholder="Search for..." {% if not user.is_authenticated %} disabled {% endif %}>
+                    </div>
+                </div>
+
+
+                <div class="col  col-sm-7">
+                    {% if not user.is_authenticated %}
+                    <form class="form-inline pull-right">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="login-username">Username:</label>
+                            <input type="text" class="form-control" id="login-username">
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password:</label>
+                            <input type="password" class="form-control" id="login-password">
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Remember me</label>
+                        </div>
+
+                        <button id="login-button" type="submit" class="btn btn-default">Login</button>
+                        <a id="signup-button" class="btn btn-default" href="{% url 'hpradiotracker:sign-up-view' %}">SignUp</a>
+
+                    </form>
+                    {% else %}
+                    <div class="pull-right">
+                        <a id="logout-button" class="btn btn-default" href="{% url 'hpradiotracker:logout-view' %}">Log Out</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <audio id="audio-controler" class="col-sm-12" controls>
+                <source src="" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <div id="table-content" class="content">
+            {% include "hpradiotracker/table.html" %}
+        </div>
+
+        <div class="well wel-sm">
+            <div class="btn-group">
+                <button id="update-database-button" type="button" class="btn btn-primary" {% if not user.is_authenticated %} disabled {% endif %}>Update database</button>
+            </div>
+            <select id="select-update-depth" class="custom-select" {% if not user.is_authenticated %} disabled {% endif %}>
+                    <option value="1">Normal Depth Update</option>
+                    <option value="5">High Depth Update</option>
+                    <option value="10">Very High Depth Update</option>
+            </select>
+        </div>
+    </div>
+
+</body>
+</htm

@@ -1,0 +1,79 @@
+<div id="general-div-radio-table">
+{% load staticfiles %}
+{% if db_radio_programs_list.has_other_pages %}
+    <ul class="pagination">
+        {% if db_radio_programs_list.has_previous %}
+            <li><a href="?page={{db_radio_programs_list.previous_page_number}}{% if query_string != '' %}&query_string={{query_string}}{%endif%}">&laquo;</a></li>
+        {% else %}
+            <li class="disabled"><span>&laquo;</span></li>
+        {% endif%}
+
+        {% for i in db_radio_programs_list.paginator.page_range %}
+            {% if db_radio_programs_list.number == i%}
+                <li class="active"><span id="span-data">{{ i }}<span class="sr-only">(current)</span></span></li>
+            {% else %}
+                <li><a href="?page={{ i }}{% if query_string != '' %}&query_string={{query_string}}{%endif%}">{{ i }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if db_radio_programs_list.has_next %}
+            <li><a href="?page={{db_radio_programs_list.next_page_number}}{% if query_string != '' %}&query_string={{query_string}}{%endif%}">&raquo;</a></li>
+        {% else %}
+            <li class="disabled"><span>&raquo;</span></li>
+        {% endif%}
+    </ul>
+{% endif %}
+
+<table id="radio-table" class="table table-hover table-condensed">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Seen</th>
+            <th>Download</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% if db_radio_programs_list %}
+        {% for model in db_radio_programs_list %}
+            {% if user_program_id == model.inner_identifier %}
+                <tr id="row-program-{{ model.inner_identifier }}" class="bg-success file-downloaded">
+            {% else %}
+                <tr id="row-program-{{ model.inner_identifier }}">
+            {% endif %}
+
+                <td>
+                    {{ model.program_name }}
+                </td>
+                <td>
+                    {{ model.added_date }}
+                </td>
+                <td>
+                    {% if user.is_authenticated %}
+                    <a id="link-change-seen-{{ model.inner_identifier }}" class="link-change-seen">
+                        {% if user in model.have_been_seen_by.all %}
+                        <img class="img-responsive img-rounded" border="0" src="{% static 'hpradiotracker/img/iconmonstr-eye-1-240_seen.png' %}" width="50" height="50">
+                        {% else %}
+                        <img class="img-responsive img-rounded" border="0" src="{% static 'hpradiotracker/img/iconmonstr-eye-10-240_not_seen.png' %}" width="50" height="50">
+                        {% endif %}
+                    </a>
+                    {% else %}
+                    <img class="img-responsive img-rounded" border="0" src="{% static 'hpradiotracker/img/iconmonstr-eye-10-240_not_seen_gray.png' %}" width="50" height="50">
+                    {% endif %}
+                </td>
+                <td>
+                    {% if user.is_authenticated %}
+                    <a id="link-download-file-{{ model.inner_identifier }}" class="link-download-file">
+                        <img class="img-responsive img-rounded" border="0" src="{% static 'hpradiotracker/img/iconmonstr-download-15-240_download.png' %}" width="50" height="50">
+                    </a>
+                    {% else %}
+                    <img class="img-responsive img-rounded" border="0" src="{% static 'hpradiotracker/img/iconmonstr-download-15-240_download_gray.png' %}" width="50" height="50">
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    {% endif %}
+</tbody>
+</table>
+</div>

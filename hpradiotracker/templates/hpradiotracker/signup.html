@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>H!P Radio Tracker (Kumai)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'hpradiotracker/cerulean/bootstrap.css' %}">
+</head>
+<body>
+    <div id="container" class="container">
+        {% block content %}
+            <h2>H!P Radio Tracker - Sign up</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Sign up</button>
+            </form>
+        {% endblock %}
+    </div>
+</body>
+</html>
